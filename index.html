@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Content Curation &amp; Knowledge Management — Portfolio Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+
+    --paper: #FDF6EC;
+    --paper-card: #FFFFFF;
+    --paper-card-2: #FFE7CC;
+    --ink: #13263d;
+    --ink-soft: #5b6b7b;
+    --film: #13263d;
+    --film-2: #1e3a5f;
+    --film-ink: #FDF6EC;
+    --red: #ea580c;
+    --red-soft: #FFE0CC;
+    --teal: #0d9488;
+    --teal-soft: #CDEDE8;
+    --gold: #f59e0b;
+    --line: rgba(19,38,61,0.12);
+    --shadow: rgba(19,38,61,0.25);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(76px + env(safe-area-inset-top, 0px)); }
+  html, body { height: auto; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0e1c2e;
+      --paper-card: #16293f;
+      --paper-card-2: #1e3a5f;
+      --ink: #eef5fb;
+      --ink-soft: #a9bccd;
+      --film: #0a1522;
+      --film-2: #13263d;
+      --film-ink: #eef5fb;
+      --red: #fb923c;
+      --red-soft: #3a2415;
+      --teal: #2dd4bf;
+      --teal-soft: #0f3b36;
+      --gold: #fbbf24;
+      --line: rgba(238,245,251,0.16);
+      --shadow: rgba(0,0,0,0.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0e1c2e;
+    --paper-card: #16293f;
+    --paper-card-2: #1e3a5f;
+    --ink: #eef5fb;
+    --ink-soft: #a9bccd;
+    --film: #0a1522;
+    --film-2: #13263d;
+    --film-ink: #eef5fb;
+    --red: #fb923c;
+    --red-soft: #3a2415;
+    --teal: #2dd4bf;
+    --teal-soft: #0f3b36;
+    --gold: #fbbf24;
+    --line: rgba(238,245,251,0.16);
+    --shadow: rgba(0,0,0,0.6);
+  }
+
+  h1, h2, h3, .display { font-family: 'Fraunces', Georgia, serif; }
+  .mono { font-family: 'Space Mono', 'Courier New', monospace; }
+  a { color: inherit; }
+  img, svg { max-width: 100%; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .rail {
+    position: fixed; top: 0; bottom: 0; width: 22px;
+    background: repeating-linear-gradient(to bottom, var(--film) 0px, var(--film) 14px, transparent 14px, transparent 28px);
+    z-index: 5; opacity: 0.9;
+  }
+  .rail.left { left: 0; }
+  .rail.right { right: 0; }
+  @media (max-width: 720px) { .rail { display: none; } }
+
+  nav {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--film); color: var(--film-ink);
+    border-bottom: 3px solid var(--red);
+    padding: env(safe-area-inset-top, 0px) 0 0 0;
+  }
+  .nav-inner { max-width: 900px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.01em; white-space: nowrap; }
+  .brand span { color: var(--red); }
+  .nav-scroll { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+  .nav-scroll::-webkit-scrollbar { display: none; }
+  .nav-pill { font-family: 'Space Mono', monospace; font-size: 0.72rem; padding: 5px 10px; border: 1px solid rgba(253,246,236,0.25); border-radius: 999px; white-space: nowrap; opacity: 0.85; text-decoration: none; flex: none; }
+  .nav-pill:hover { border-color: var(--red); opacity: 1; }
+  header.hero { background: radial-gradient(circle at 85% -10%, rgba(234,88,12,0.35), transparent 55%), radial-gradient(circle at 0% 110%, rgba(13,148,136,0.25), transparent 50%), var(--film); color: var(--film-ink); padding: 64px 0 84px; position: relative; overflow: hidden; }
+  header.hero .wrap { position: relative; z-index: 2; }
+  .eyebrow-strip { display: inline-flex; align-items: center; gap: 10px; font-family: 'Space Mono', monospace; font-size: 0.78rem; color: var(--red); background: rgba(234,88,12,0.14); border: 1px solid rgba(234,88,12,0.4); padding: 6px 12px; border-radius: 999px; margin-bottom: 22px; }
+  .eyebrow-strip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
+  h1.title { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.02; margin: 0 0 20px; font-weight: 700; max-width: 16ch; }
+  .hero-sub { max-width: 56ch; font-size: 1.15rem; color: rgba(253,246,236,0.82); margin: 0 0 36px; }
+  .hero-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1px; background: rgba(253,246,236,0.16); border: 1px solid rgba(253,246,236,0.16); max-width: 680px; }
+  .hstat { background: var(--film); padding: 16px 18px; }
+  .hstat .num { font-family: 'Fraunces', serif; font-size: 1.9rem; font-weight: 700; color: var(--gold); display: block; }
+  .hstat .lbl { font-size: 0.78rem; color: rgba(253,246,236,0.65); }
+
+  main { padding-bottom: 40px; }
+  section.frame { padding: 74px 0; border-bottom: 1px solid var(--line); }
+  section.frame:last-of-type { border-bottom: none; }
+  .frame-tag { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--red); border: 1px solid var(--red); font-family: 'Space Mono', monospace; font-size: 0.78rem; color: #fff; font-weight: 700; margin-bottom: 18px; box-shadow: 0 4px 14px var(--red-soft); }
+  h2.h { font-size: clamp(1.6rem, 3.4vw, 2.3rem); margin: 0 0 14px; font-weight: 700; max-width: 22ch; }
+  .lede { color: var(--ink-soft); max-width: 62ch; margin: 0 0 30px; font-size: 1.04rem; }
+
+  .pv-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); margin-top: 8px; }
+  .pv-half { padding: 30px 28px; }
+  .pv-half.photo { background: var(--paper-card); border-right: 1px solid var(--line); }
+  .pv-half.voice { background: var(--film); color: var(--film-ink); }
+  .pv-half h3 { margin: 0 0 8px; font-size: 1.3rem; }
+  .pv-half.voice h3 { color: var(--red); }
+  .pv-half p { margin: 0; color: inherit; opacity: 0.85; font-size: 0.98rem; }
+  @media (max-width: 640px) { .pv-split { grid-template-columns: 1fr; } .pv-half.photo { border-right: none; border-bottom: 1px solid var(--line); } }
+
+  .rubric { border: 1px solid var(--line); background: var(--paper-card); }
+  .rub-row { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; padding: 16px 18px; border-bottom: 1px solid var(--line); cursor: pointer; transition: background 0.15s ease; }
+  .rub-row:last-child { border-bottom: none; }
+  .rub-row:hover, .rub-row.active { background: var(--paper-card-2); }
+  .rub-name { font-weight: 600; font-size: 0.98rem; }
+  .rub-bar-track { height: 8px; background: var(--line); border-radius: 4px; margin-top: 8px; overflow: hidden; }
+  .rub-bar-fill { height: 100%; background: var(--red); border-radius: 4px; width: 0; transition: width 0.7s cubic-bezier(.2,.8,.2,1); }
+  .rub-marks { font-family: 'Space Mono', monospace; font-size: 1.1rem; color: var(--red); white-space: nowrap; }
+  .rub-detail { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; font-size: 0.92rem; color: var(--ink-soft); background: var(--paper); }
+  .rub-detail.open { max-height: 200px; }
+  .rub-detail-inner { padding: 4px 18px 16px; }
+  .rub-total { display: flex; justify-content: space-between; padding: 16px 18px; font-family: 'Fraunces', serif; font-weight: 700; background: var(--film); color: var(--film-ink); }
+  .rub-total .n { color: var(--red); }
+
+  .toggle-row { display: flex; gap: 10px; margin-bottom: 26px; flex-wrap: wrap; }
+  .toggle-btn { font-family: 'Space Mono', monospace; font-size: 0.78rem; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper-card); cursor: pointer; color: var(--ink); }
+  .toggle-btn.active { background: var(--red); color: #fff; border-color: var(--red); }
+  .concept-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .cbox { border: 1px solid var(--line); padding: 22px; background: var(--paper-card); }
+  .cbox.yes { border-color: var(--teal); background: var(--teal-soft); }
+  .cbox .mark { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+  .cbox p { margin: 0; font-weight: 600; }
+  .cbox small { color: var(--ink-soft); font-weight: 400; display: block; margin-top: 6px; font-size: 0.86rem; }
+  @media (max-width: 640px) { .concept-pair { grid-template-columns: 1fr; } }
+
+  .flip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+  .flip-card { perspective: 1200px; height: 185px; cursor: pointer; }
+  .flip-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.55s cubic-bezier(.2,.8,.2,1); }
+  .flip-card.flipped .flip-inner { transform: rotateY(180deg); }
+  .flip-face { position: absolute; inset: 0; backface-visibility: hidden; border: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 14px; }
+  .flip-front { background: var(--paper-card); }
+  .flip-front .ic { font-size: 2rem; margin-bottom: 10px; }
+  .flip-front .lbl { font-weight: 600; font-size: 0.95rem; }
+  .flip-front .hint { font-size: 0.72rem; color: var(--ink-soft); margin-top: 6px; font-family: 'Space Mono', monospace; }
+  .flip-back { background: var(--film); color: var(--film-ink); transform: rotateY(180deg); font-size: 0.84rem; }
+  .flip-back b { color: var(--red); display: block; margin-bottom: 4px; font-family: 'Fraunces', serif; font-size: 1rem; }
+
+  .ws-wrap { border: 1px solid var(--line); background: var(--paper-card); }
+  .ws-row { padding: 22px 24px; border-bottom: 1px solid var(--line); }
+  .ws-row:last-child { border-bottom: none; }
+  .ws-tag { font-family: 'Space Mono', monospace; font-size: 0.72rem; padding: 3px 9px; border-radius: 4px; margin-bottom: 10px; display: inline-block; }
+  .ws-tag.weak { background: var(--red-soft); color: var(--red); }
+  .ws-tag.strong { background: var(--teal-soft); color: var(--teal); }
+  .ws-quote { font-style: italic; margin: 0; }
+
+  .builder { border: 1px solid var(--line); background: var(--paper-card); padding: 26px; }
+  .builder label { display: block; font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--ink-soft); margin: 14px 0 6px; }
+  .builder label:first-child { margin-top: 0; }
+  .builder input { width: 100%; padding: 10px 12px; font-family: 'Work Sans', sans-serif; font-size: 0.98rem; border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 4px; }
+  .builder input:focus { outline: none; border-color: var(--red); }
+  .caption-preview { margin-top: 20px; padding: 20px; background: var(--film); color: var(--film-ink); font-family: 'Fraunces', serif; font-style: italic; font-size: 1.08rem; line-height: 1.5; border-left: 3px solid var(--red); }
+  .caption-preview .lead { font-style: normal; font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--red); display: block; margin-bottom: 8px; }
+
+  .report-bar { display: flex; height: 34px; border-radius: 4px; overflow: hidden; margin-bottom: 22px; border: 1px solid var(--line); }
+  .report-seg { display: flex; align-items: center; justify-content: center; font-family: 'Space Mono', monospace; font-size: 0.68rem; color: #fff; }
+  .acc { border: 1px solid var(--line); background: var(--paper-card); margin-bottom: 10px; }
+  .acc-head { display: flex; justify-content: space-between; align-items: center; padding: 16px 18px; cursor: pointer; }
+  .acc-head h4 { margin: 0; font-size: 1rem; font-family: 'Fraunces', serif; }
+  .acc-words { font-family: 'Space Mono', monospace; font-size: 0.74rem; color: var(--red); }
+  .acc-plus { font-size: 1.2rem; color: var(--ink-soft); transition: transform 0.25s ease; }
+  .acc.open .acc-plus { transform: rotate(45deg); }
+  .acc-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .acc.open .acc-body { max-height: 320px; }
+  .acc-body-inner { padding: 0 18px 18px; color: var(--ink-soft); font-size: 0.94rem; }
+  .acc-body-inner ul { margin: 8px 0 0; padding-left: 18px; }
+
+  .chain { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 22px; }
+  .chain-step { font-family: 'Space Mono', monospace; font-size: 0.76rem; padding: 9px 13px; border: 1px solid var(--line); background: var(--paper-card); cursor: pointer; border-radius: 4px; transition: all 0.2s ease; }
+  .chain-step.active { background: var(--red); color: #fff; border-color: var(--red); }
+  .chain-arrow { color: var(--ink-soft); font-size: 0.9rem; }
+  .chain-detail { border: 1px solid var(--line); background: var(--paper-card); padding: 22px; min-height: 90px; display: flex; align-items: center; }
+  .chain-detail p { margin: 0; font-size: 1rem; }
+  .chain-detail b { color: var(--red); font-family: 'Fraunces', serif; }
+
+  .mistake-grid { display: grid; gap: 12px; }
+  .mistake { border: 1px solid var(--line); background: var(--paper-card); padding: 18px 20px; display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start; }
+  .mistake .x { color: var(--red); font-size: 1.2rem; line-height: 1.4; }
+  .mistake b { display: block; margin-bottom: 4px; }
+  .mistake span { color: var(--ink-soft); font-size: 0.94rem; }
+
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item:first-child { border-top: 1px solid var(--line); }
+  .faq-q { padding: 18px 4px; cursor: pointer; display: flex; justify-content: space-between; gap: 14px; align-items: center; font-weight: 600; }
+  .faq-plus { color: var(--red); font-size: 1.3rem; flex: none; transition: transform 0.25s ease; }
+  .faq-item.open .faq-plus { transform: rotate(45deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .faq-item.open .faq-a { max-height: 260px; }
+  .faq-a-inner { padding: 0 4px 18px; color: var(--ink-soft); font-size: 0.96rem; }
+
+  .progress-wrap { margin-bottom: 24px; }
+  .progress-track { height: 10px; background: var(--line); border-radius: 5px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--teal); width: 0%; transition: width 0.4s ease; }
+  .progress-label { font-family: 'Space Mono', monospace; font-size: 0.76rem; color: var(--ink-soft); margin-top: 8px; }
+  .check-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .check-group h4 { font-family: 'Space Mono', monospace; font-size: 0.76rem; color: var(--red); margin: 0 0 10px; }
+  .check-item { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; cursor: pointer; font-size: 0.94rem; }
+  .check-item input { margin-top: 3px; accent-color: var(--red); width: 16px; height: 16px; flex: none; }
+  .check-item span.done { text-decoration: line-through; opacity: 0.5; }
+
+  footer { background: var(--film); color: var(--film-ink); padding: 60px 0 calc(50px + env(safe-area-inset-bottom, 0px)); }
+  .foot-title { font-size: 1.5rem; margin: 0 0 8px; }
+  .foot-sub { color: rgba(253,246,236,0.65); margin: 0 0 30px; max-width: 50ch; }
+  .strip { display: flex; flex-wrap: wrap; gap: 10px; }
+  .strip-frame { flex: 1 1 150px; border: 1px solid rgba(253,246,236,0.2); padding: 14px; background: rgba(253,246,236,0.04); }
+  .strip-frame .n { font-family: 'Space Mono', monospace; color: var(--gold); font-size: 0.74rem; display: block; margin-bottom: 6px; }
+  .strip-frame p { margin: 0; font-size: 0.86rem; }
+  .foot-q { margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(253,246,236,0.15); font-family: 'Fraunces', serif; font-style: italic; font-size: 1.15rem; max-width: 50ch; }
+  .foot-q span { color: var(--red); }
+  .tools-two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .tool-card { border: 1px solid var(--line); background: var(--paper-card); padding: 26px; display: flex; flex-direction: column; }
+  .tc-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .tc-ic { font-size: 2.2rem; line-height: 1; }
+  .tc-head h3 { margin: 0; font-size: 1.4rem; }
+  .tc-role { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--red); }
+  .tool-card > p { margin: 0 0 16px; font-size: 0.96rem; color: var(--ink-soft); }
+  .tc-list { margin: 0 0 20px; padding-left: 18px; color: var(--ink); font-size: 0.92rem; }
+  .tc-list li { margin-bottom: 6px; }
+  .tc-btn { margin-top: auto; display: inline-block; text-align: center; background: var(--red); color: #fff; text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.8rem; padding: 13px 16px; border-radius: 6px; transition: background 0.15s ease; }
+  .tc-btn:hover { background: var(--teal); }
+  @media (max-width: 640px) { .tools-two { grid-template-columns: 1fr; } }
+  .tools-three { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 900px) { .tools-three { grid-template-columns: 1fr; } }
+  .pad-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .pad-col { border: 1px solid var(--line); background: var(--paper-card); border-radius: 8px; overflow: hidden; }
+  .pad-col .pc-top { padding: 12px 14px; color: #fff; font-family: 'Space Mono', monospace; font-size: 0.78rem; font-weight: 700; line-height: 1.3; }
+  .pad-col .pc-body { padding: 12px 14px; font-size: 0.9rem; color: var(--ink-soft); }
+  @media (max-width: 900px) { .pad-cols { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .pad-cols { grid-template-columns: 1fr; } }
+  .gh-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .gh-card { border: 1px solid var(--line); background: var(--paper-card); border-radius: 10px; padding: 20px; }
+  .gh-card .gh-ic { font-size: 2rem; line-height: 1; }
+  .gh-card h4 { margin: 10px 0 6px; font-family: 'Fraunces', serif; font-size: 1.1rem; }
+  .gh-card p { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
+  @media (max-width: 760px) { .gh-grid { grid-template-columns: 1fr; } }
+  ::selection { background: var(--red); color: #fff; }
+</style>
+</head>
+<body>
+<div class="rail left" aria-hidden="true"></div>
+<div class="rail right" aria-hidden="true"></div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">Curation<span>&amp;KM</span></div>
+    <div class="nav-scroll">
+      <a class="nav-pill" href="#what">01 What it is</a>
+      <a class="nav-pill" href="#collect">02 Collect vs curate</a>
+      <a class="nav-pill" href="#tools">03 My tools</a>
+      <a class="nav-pill" href="#wakelet">04 Wakelet</a>
+      <a class="nav-pill" href="#padlet">05 Padlet</a>
+      <a class="nav-pill" href="#github">06 GitHub</a>
+      <a class="nav-pill" href="#describe">07 Describe</a>
+      <a class="nav-pill" href="#chain">08 To the class</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow-strip"><span class="dot"></span> Portfolio section · ICT &amp; Life Orientation</div>
+    <h1 class="title">Content Curation &amp; Knowledge Management</h1>
+    <p class="hero-sub">Tools used to collect, organise and share information — and the thinking that turns a pile of links into curated, CAPS-aligned teaching resources. This is my evidence for the section.</p>
+    <div class="hero-stats">
+      <div class="hstat"><span class="num">3</span><span class="lbl">tools used</span></div>
+      <div class="hstat"><span class="num">3</span><span class="lbl">Wakelet collections</span></div>
+      <div class="hstat"><span class="num">1</span><span class="lbl">Padlet showcase board</span></div>
+      <div class="hstat"><span class="num">3</span><span class="lbl">GitHub learning games</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="frame" id="what">
+    <div class="frame-tag">01</div>
+    <h2 class="h">The tool + the thinking</h2>
+    <p class="lede">Content curation is not hoarding bookmarks. Like any good resource, a link only becomes <b>curated knowledge</b> once you have evaluated it, organised it and shared it for a purpose.</p>
+    <div class="pv-split">
+      <div class="pv-half photo">
+        <h3>Collecting</h3>
+        <p>Finding and saving information — a link, an article, a video. The raw material.</p>
+      </div>
+      <div class="pv-half voice">
+        <h3>Curating</h3>
+        <p>Evaluating, organising and sharing the best of it around a theme and a teaching goal — that is knowledge management.</p>
+      </div>
+    </div>
+    <p class="lede" style="margin-top:26px;">Fifty saved tabs is just collecting. A themed, evaluated Wakelet collection my learners can actually use is curation. The question is never “what can I save?” — it is <b>“what is worth sharing, and why?”</b></p>
+  </section>
+
+  <section class="frame" id="collect">
+    <div class="frame-tag">02</div>
+    <h2 class="h">Collecting vs. curating</h2>
+    <p class="lede">Pick the theme first, then evaluate what earns a place. Tap an example to see the difference.</p>
+    <div class="toggle-row" id="ideaToggles"></div>
+    <div class="concept-pair" id="ideaPair"></div>
+  </section>
+
+  <section class="frame" id="tools">
+    <div class="frame-tag">03</div>
+    <h2 class="h">The three tools I used — and how</h2>
+    <p class="lede">I curated with three tools that work together: <b>Wakelet</b> to collect and evaluate resources, <b>Padlet</b> to organise and showcase them, and <b>GitHub</b> to publish interactive learning games built from the same curated content. Here is each one and exactly how I used it — tap through to the live result.</p>
+    <div class="tools-two tools-three">
+      <div class="tool-card">
+        <div class="tc-head"><span class="tc-ic">🗂️</span><div><h3>Wakelet</h3><span class="tc-role">Collect &amp; evaluate</span></div></div>
+        <p>Wakelet is a free platform for building visual collections of links, text and media. I used it as my main curation hub, building three themed collections of CAPS-aligned ICT and Life Orientation resources. For every link I added a short note on why it earns its place and how I would use it in class — so each collection shows my professional judgement, not just a list.</p>
+        <ul class="tc-list"><li>Three themed, evaluated collections</li><li>Verified, credible South African sources</li><li>A justification note on every resource</li></ul>
+        <a class="tc-btn" href="https://wakelet.com/@MathapeloMokoena62199" target="_blank" rel="noopener">Visit my Wakelet profile →</a>
+      </div>
+      <div class="tool-card">
+        <div class="tc-head"><span class="tc-ic">📌</span><div><h3>Padlet</h3><span class="tc-role">Organise &amp; share</span></div></div>
+        <p>Padlet is a collaborative board for arranging and sharing resources visually. I used it to pull my curated material together into one board — "The Future-Ready South African Classroom" — laid out in topic columns so peers and learners can navigate the whole collection at a glance and respond with comments and reactions.</p>
+        <ul class="tc-list"><li>Organised into topic sections (shelf layout)</li><li>Wakelet collections linked in</li><li>Comments &amp; reactions on for interaction</li></ul>
+        <a class="tc-btn" href="https://padlet.com/mathapelo07m/the-future-ready-south-african-classroom-ict-life-orientatio-s024qscptwwbrewb17uo" target="_blank" rel="noopener">Visit my Padlet board →</a>
+      </div>
+      <div class="tool-card">
+        <div class="tc-head"><span class="tc-ic">💻</span><div><h3>GitHub</h3><span class="tc-role">Build &amp; publish</span></div></div>
+        <p>GitHub (with GitHub Pages) lets me host my own web pages for free. I used it to turn curated content into three interactive learning games and publish them as a live website — so the resources I collected are not just saved, they are applied in something learners can actually click through and play.</p>
+        <ul class="tc-list"><li>Three browser-based learning games</li><li>Hosted live on GitHub Pages</li><li>Curation put to work, not just stored</li></ul>
+        <a class="tc-btn" href="https://mathapelo07m.github.io/curation-games/" target="_blank" rel="noopener">Play my GitHub games →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="frame" id="wakelet">
+    <div class="frame-tag">04</div>
+    <h2 class="h">My Wakelet collections</h2>
+    <p class="lede">My Wakelet profile is my curated library. I built <b>three themed collections</b> that span both my subjects — ICT and Life Orientation. Tap each one to see what is inside and why I curated it.</p>
+    <div id="wakeletAcc"></div>
+    <a class="tc-btn" style="margin-top:20px;max-width:340px;" href="https://wakelet.com/@MathapeloMokoena62199" target="_blank" rel="noopener">Open my Wakelet profile →</a>
+  </section>
+
+  <section class="frame" id="padlet">
+    <div class="frame-tag">05</div>
+    <h2 class="h">My Padlet board</h2>
+    <p class="lede">Padlet is where I organised my curated work into one shareable showcase: <b>"The Future-Ready South African Classroom"</b>. I used a shelf (column) layout to give each of my themes its own space, linked my Wakelet collections in, and turned comments and reactions on so the board works as a living, collaborative space my peers and lecturer can respond to.</p>
+    <div class="pad-cols" id="padletCols"></div>
+    <a class="tc-btn" style="margin-top:22px;max-width:340px;" href="https://padlet.com/mathapelo07m/the-future-ready-south-african-classroom-ict-life-orientatio-s024qscptwwbrewb17uo" target="_blank" rel="noopener">Open my Padlet board →</a>
+  </section>
+
+  <section class="frame" id="github">
+    <div class="frame-tag">06</div>
+    <h2 class="h">My GitHub games</h2>
+    <p class="lede">To show curation in action, I used GitHub Pages to build and publish <b>three interactive learning games</b> from my curated content. They take the ideas behind my collections — evaluating sources, digital citizenship, curation itself — and make them something learners can click through and play.</p>
+    <div class="gh-grid" id="githubGrid"></div>
+    <a class="tc-btn" style="margin-top:22px;max-width:340px;" href="https://mathapelo07m.github.io/curation-games/" target="_blank" rel="noopener">Play the games on GitHub →</a>
+  </section>
+
+  <section class="frame">
+    <div class="frame-tag">•</div>
+    <h2 class="h">Listing vs. evaluating</h2>
+    <p class="lede">This is the heart of curation. A resource that is only listed is not curated — it needs your professional judgement attached.</p>
+    <div class="ws-wrap">
+      <div class="ws-row">
+        <span class="ws-tag weak">Listing</span>
+        <p class="ws-quote">“Here is a link to the SADAG website.”</p>
+      </div>
+      <div class="ws-row">
+        <span class="ws-tag strong">Evaluating</span>
+        <p class="ws-quote">“SADAG (sadag.org) is South Africa’s largest mental-health NGO. I curated it for my Life Orientation wellbeing collection because it is a credible, current, local source with free learner support lines — I’d use it to open a lesson on help-seeking.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="frame" id="describe">
+    <div class="frame-tag">07</div>
+    <h2 class="h">Describe a resource, live</h2>
+    <p class="lede">Every curated item needs a short note that justifies it, not just a title. Try the formula: <b>source + why I chose it + how I’d use it.</b></p>
+    <div class="builder">
+      <label for="cptConcept">The source</label>
+      <input id="cptConcept" type="text" placeholder="e.g. CS Unplugged (csunplugged.org)" value="CS Unplugged (csunplugged.org)">
+      <label for="cptMeaning">Why I chose it &amp; how I’d use it</label>
+      <input id="cptMeaning" type="text" placeholder="e.g. a credible, device-free way to teach coding concepts — I’d use it for my Grade 8 unplugged ICT lesson" value="a credible, device-free way to teach coding concepts — I’d use it for my Grade 8 unplugged ICT lesson">
+      <div class="caption-preview" id="cptPreview"></div>
+    </div>
+  </section>
+
+  <section class="frame" id="chain">
+    <div class="frame-tag">08</div>
+    <h2 class="h">From one resource to classroom learning</h2>
+    <p class="lede">This is the chain that turns one curated link into real classroom learning. Click a step to see it explained, using a SADAG wellbeing resource as the working example.</p>
+    <div class="chain" id="chainNav"></div>
+    <div class="chain-detail" id="chainDetail"></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h3 class="foot-title">The curation cycle</h3>
+    <p class="foot-sub">If you remember nothing else from this section, remember the sequence.</p>
+    <div class="strip" id="filmStrip"></div>
+    <p class="foot-q">“Is this resource credible, relevant and worth sharing — and how would it <span>support learning</span> in my classroom?”</p>
+  </div>
+</footer>
+<script>
+(function(){
+  // 04 Wakelet collections
+  const collections = [
+    { name: "CAPS-Aligned Life Orientation Teaching Resources", role: "LO", detail: "Official, curriculum-aligned Life Orientation material so every lesson I plan maps directly to CAPS and to what learners are actually assessed on — including credible South African support for the wellbeing side of the subject.", points: ["DBE CAPS Life Orientation documents", "WCED ePortal teaching & assessment plans", "Siyavula open resources", "SADAG for wellbeing & help-seeking"] },
+    { name: "ICT & Coding in Low-Resource Classrooms", role: "ICT", detail: "Device-free and low-cost ways to teach computational thinking and coding — chosen so I can still teach these concepts even when a class has few or no computers.", points: ["CS Unplugged — unplugged coding activities", "Code.org & Scratch — beginner coding", "Khan Academy Computing"] },
+    { name: "Teaching Standards & My Professional Growth", role: "ICT + LO", detail: "The professional side across both my subjects — the standards and frameworks that guide how a teacher should use technology and keep growing, so my practice is grounded in recognised expectations, not guesswork.", points: ["UNESCO ICT-CFT framework", "Teacher digital-competency guides", "Professional reading & reflection"] }
+  ];
+  const wakeletAcc = document.getElementById('wakeletAcc');
+  collections.forEach((c, i) => {
+    const acc = document.createElement('div');
+    acc.className = 'acc';
+    acc.innerHTML = `<div class="acc-head"><h4>${i+1}. ${c.name}</h4><div style="display:flex;align-items:center;gap:12px;"><span class="acc-words">${c.role}</span><span class="acc-plus">+</span></div></div><div class="acc-body"><div class="acc-body-inner">${c.detail}<ul>${c.points.map(p=>`<li>${p}</li>`).join('')}</ul></div></div>`;
+    acc.querySelector('.acc-head').addEventListener('click', () => acc.classList.toggle('open'));
+    wakeletAcc.appendChild(acc);
+  });
+
+  // 05 Padlet columns
+  const padCols = [
+    { t: "CAPS-Aligned Life Orientation", c: "#13263d", d: "My Life Orientation collection: CAPS documents, teaching plans and wellbeing support." },
+    { t: "ICT & Coding in Low-Resource Classrooms", c: "#0d9488", d: "My ICT collection: device-free coding and computational-thinking resources." },
+    { t: "Teaching Standards & Professional Growth", c: "#ea580c", d: "Frameworks and reflection that ground my practice across both subjects." }
+  ];
+  const padletCols = document.getElementById('padletCols');
+  padCols.forEach(col => {
+    const el = document.createElement('div');
+    el.className = 'pad-col';
+    el.innerHTML = `<div class="pc-top" style="background:${col.c}">${col.t}</div><div class="pc-body">${col.d}</div>`;
+    padletCols.appendChild(el);
+  });
+
+  // 06 GitHub games
+  const games = [
+    { ic: "🔎", name: "Spot the Reliable Source", d: "Players judge sources against evaluation criteria and sort credible from unreliable — the core curation skill, gamified." },
+    { ic: "🛡️", name: "Digital Citizenship Dilemmas", d: "Scenario choices about safe, responsible online behaviour — ICT skills meeting Life Orientation values." },
+    { ic: "🧠", name: "Curation Quiz Challenge", d: "A quick quiz on what curation is, why it matters and how to do it well — a check-for-understanding activity." }
+  ];
+  const githubGrid = document.getElementById('githubGrid');
+  games.forEach(g => {
+    const el = document.createElement('div');
+    el.className = 'gh-card';
+    el.innerHTML = `<div class="gh-ic">${g.ic}</div><h4>${g.name}</h4><p>${g.d}</p>`;
+    githubGrid.appendChild(el);
+  });
+
+  // 03 Collecting vs curating
+  const ideaPairs = [
+    { object: "50 saved browser tabs", big: "One evaluated, themed collection", noteObj: "Raw, unsorted, soon forgotten.", noteBig: "Selected for quality and purpose." },
+    { object: "A folder of random PDFs", big: "Research organised by CAPS topic", noteObj: "Hard to find, harder to reuse.", noteBig: "Structured so it can be built on." },
+    { object: "'Here's a cool link'", big: "A link with a reason and a use", noteObj: "No judgement attached.", noteBig: "Your professional voice added." },
+    { object: "Sharing everything you find", big: "Sharing only what passes the criteria", noteObj: "Quantity over quality.", noteBig: "Credible, relevant and current." }
+  ];
+  const ideaToggles = document.getElementById('ideaToggles');
+  const ideaPair = document.getElementById('ideaPair');
+  function renderIdea(i) {
+    const p = ideaPairs[i];
+    ideaPair.innerHTML = `<div class="cbox no"><span class="mark" style="color:var(--red)">✕ Collecting</span><p>"${p.object}"</p><small>${p.noteObj}</small></div><div class="cbox yes"><span class="mark" style="color:var(--teal)">✓ Curating</span><p>"${p.big}"</p><small>${p.noteBig}</small></div>`;
+  }
+  ideaPairs.forEach((p, i) => {
+    const b = document.createElement('button');
+    b.className = 'toggle-btn' + (i === 0 ? ' active' : '');
+    b.textContent = p.object;
+    b.addEventListener('click', () => { document.querySelectorAll('.toggle-btn').forEach(t => t.classList.remove('active')); b.classList.add('active'); renderIdea(i); });
+    ideaToggles.appendChild(b);
+  });
+  renderIdea(0);
+
+  // 05 Resource-note builder
+  const cptConcept = document.getElementById('cptConcept');
+  const cptMeaning = document.getElementById('cptMeaning');
+  const cptPreview = document.getElementById('cptPreview');
+  function updateCaption() {
+    const c = cptConcept.value.trim() || "Your source";
+    const m = cptMeaning.value.trim() || "why you chose it and how you'd use it…";
+    cptPreview.innerHTML = `<span class="lead">Resource note preview</span>${c} — ${m}`;
+  }
+  cptConcept.addEventListener('input', updateCaption);
+  cptMeaning.addEventListener('input', updateCaption);
+  updateCaption();
+
+  // 07 Resource-to-classroom chain
+  const chain = [
+    { step: "Find", text: "I find the SADAG website while searching for Life Orientation wellbeing resources." },
+    { step: "Evaluate", text: "I test it against my criteria: credible NGO, current, South African, clear purpose — it passes." },
+    { step: "Organise", text: "I add it to my CAPS-Aligned Life Orientation Wakelet collection with a note on why and how to use it." },
+    { step: "Share", text: "I place the collection on my Padlet board so peers and learners can reach it." },
+    { step: "Teach", text: "I open a Grade 10 LO lesson with a SADAG help-line scenario, linked to my digital-citizenship plan." },
+    { step: "Reflect", text: "I reflect on whether it worked and invite peers to comment — turning curation into a learning network." }
+  ];
+  const chainNav = document.getElementById('chainNav');
+  const chainDetail = document.getElementById('chainDetail');
+  chain.forEach((c, i) => {
+    if (i > 0) { const arrow = document.createElement('span'); arrow.className = 'chain-arrow'; arrow.textContent = '→'; chainNav.appendChild(arrow); }
+    const btn = document.createElement('button');
+    btn.className = 'chain-step' + (i === 0 ? ' active' : '');
+    btn.textContent = c.step;
+    btn.addEventListener('click', () => { document.querySelectorAll('.chain-step').forEach(b => b.classList.remove('active')); btn.classList.add('active'); showChain(i); });
+    chainNav.appendChild(btn);
+  });
+  function showChain(i) { chainDetail.innerHTML = `<p><b>${chain[i].step}:</b> ${chain[i].text}</p>`; }
+  showChain(0);
+
+  // Footer strip
+  const strip = ["Find","Evaluate","Select","Organise","Describe","Share","Teach","Reflect","Reference","Improve"];
+  const filmStrip = document.getElementById('filmStrip');
+  strip.forEach((s, i) => { const f = document.createElement('div'); f.className = 'strip-frame'; f.innerHTML = `<span class="n">${String(i+1).padStart(2,'0')}</span><p>${s}</p>`; filmStrip.appendChild(f); });
+
+})();
+</script>
+</body>
+</html>
